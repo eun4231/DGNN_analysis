@@ -1,6 +1,6 @@
 # ASTGNN Profiling
 
-This code contains the code for performing analysis on ASTGNN model.
+The following is the code for performing analysis on ASTGNN.
 
 # Requirements
 ```python
