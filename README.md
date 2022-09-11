@@ -9,7 +9,7 @@ Directly run the donloaded installer to install this tool on your machine.
 
 ## Pytorch Profiler Installation
 
-#### Install Pytorch
+#### 1. Install Pytorch and Torchvision using the following command:
 
 ```{bash}
 pip install torch torchvision
