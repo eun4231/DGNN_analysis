@@ -1,8 +1,6 @@
-# ASTGNN
+# ASTGNN Profiling
 
-This is a Pytorch implementation of ASTGNN. Now the corresponding paper is available online at https://ieeexplore.ieee.org/document/9346058.
-
-This code contains a Pytorch implementation of ASTGNN and alterations for profiling ASTGNN.
+This code contains the code for performing analysis on ASTGNN model.
 
 # Requirements
 ```python
@@ -13,10 +11,10 @@ pip install requirements.txt
 The dataset used for ASTGNN is obtained from the Caltrans Performance Measurement System (PeMS).
 
 # Train and Test
+Set --config with a configuration file to train and test the model.
+Sample commands on PEMS04 dataset:
 
-We take the commands on PEMS04 for example.
-
-Step 1: Process dataset:
+Step 1: Preprocess the dataset:
 
 ```python
 python prepareData.py --config configurations/PEMS04.conf
@@ -24,7 +22,7 @@ python prepareData.py --config configurations/PEMS04.conf
 
 Step 2: train and test the model:
 
-To test the model, comment train_main() and uncomment predict_main in train_ASTGNN.py.
+To test the model, comment train_main() and uncomment predict_main() in train_ASTGNN.py.
 ```python
 python train_ASTGNN.py --config configurations/PEMS04.conf
 ```
