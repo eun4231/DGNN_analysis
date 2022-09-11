@@ -1,4 +1,4 @@
-# TGAT Profiling
+# TGAT Profiling Using NVIDIA Nsight Systems
 
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
 
@@ -23,11 +23,15 @@ python process.py
 * Dependency
 
 ```{bash}
-pandas==0.24.2
-torch==1.1.0
-tqdm==4.41.1
-numpy==1.16.4
-scikit_learn==0.22.1
+matplotlib==3.5.2
+numpy==1.21.2
+pandas==1.4.2
+PyYAML==6.0
+scikit_learn==1.1.2
+scipy==1.8.1
+torch==1.10.1
+torchvision==0.11.2
+tqdm==4.64.1
 ```
 
 ### Command and configurations
@@ -37,7 +41,7 @@ scikit_learn==0.22.1
 * To do the profiling on GPU
 ```{bash}
 # TGAT profiling on wikipedia data
-python -u learn_edge.py -d wikipedia --bs 200 --uniform  --n_degree 20 --agg_method attn --attn_mode prod --gpu 0 --n_head 2 --prefix hello_world --use_cuda True --start_profiling True
+nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas -s cpu --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true python -u learn_edge.py -d wikipedia --bs 200 --uniform  --n_degree 20 --agg_method attn --attn_mode prod --gpu 0 --n_head 2 --prefix hello_world
 
 #### General flags
 
