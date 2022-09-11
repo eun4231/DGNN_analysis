@@ -8,9 +8,10 @@ The dataset used for TGAT is Wikipedia. It can be downloaded here: http://snap.s
 
 ## NVIDIA Nsight Systems download
 
+Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
 
 ## Running the experiments
-Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
+
 
 #### Preprocess the data
 We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
