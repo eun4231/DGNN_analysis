@@ -1,4 +1,4 @@
-EvolveGCN Profiling
+EvolveGCN Profiling Using Pytorch Profiler
 =====
 
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
@@ -7,13 +7,15 @@ This repository contains the code for Dynamic Graph Neural Networks on Hardware:
 
 The dataset used in the paper:
 
-- bitcoin Alpha: Downloadable from http://snap.stanford.edu/data/soc-sign-bitcoin-alpha.html
+- bitcoin Alpha: http://snap.stanford.edu/data/soc-sign-bitcoin-alpha.html
+- Reddit Hyperlink Network: http://snap.stanford.edu/data/soc-RedditHyperlinks.html
+- Stochastic Block Model: https://github.com/IBM/EvolveGCN/tree/master/data
  
 For downloaded data sets please place them in the 'data' folder.
 
 ## Requirements
   * PyTorch 1.0 or higher
-  * Python 3.6
+  * Python 3.6 or higher
 
 ## Usage
 
