@@ -31,4 +31,6 @@ Log is a folder containing trace files. Or you can change it to any path contain
 
 Once you correctly profile our models using Pytorch Profiler, you will get similiar results as follows:
 
+![image](https://github.com/eun4231/DGNN_analysis/blob/main/Pytorch_profiler.png)
+
 If you choose to use NVIDIA Nsight Systems, you will get similiar results below:
