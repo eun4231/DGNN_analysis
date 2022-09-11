@@ -26,3 +26,9 @@ pip install torch_tb_profiler
 tensorboard --logdir=./log
 ```
 Log is a folder containing trace files. Or you can change it to any path containing generated trace files.
+
+## Profiling results:
+
+Once you correctly profile our models using Pytorch Profiler, you will get similiar results as follows:
+
+If you choose to use NVIDIA Nsight Systems, you will get similiar results below:
