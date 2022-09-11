@@ -34,3 +34,5 @@ Once you correctly profile our models using Pytorch Profiler, you will get simil
 ![image](https://github.com/eun4231/DGNN_analysis/blob/main/Pytorch_profiler.png)
 
 If you choose to use NVIDIA Nsight Systems, you will get similiar results below:
+
+![image](https://github.com/eun4231/DGNN_analysis/blob/main/NS.png)
