@@ -23,7 +23,7 @@ from torch.profiler import profile, record_function, ProfilerActivity
 ### Argument and global variables
 parser = argparse.ArgumentParser('Interface for TGAT experiments on link predictions')
 parser.add_argument('-d', '--data', type=str, help='data sources to use, try wikipedia or reddit', default='wikipedia')
-parser.add_argument('--bs', type=int, default=200, help='batch_size')
+parser.add_argument('--bs', type=int, default=200, help='number of nodes in a subgraph')
 parser.add_argument('--prefix', type=str, default='', help='prefix to name the checkpoints')
 parser.add_argument('--n_degree', type=int, default=20, help='number of neighbors to sample')
 parser.add_argument('--n_head', type=int, default=2, help='number of heads used in attention layer')
@@ -41,7 +41,7 @@ parser.add_argument('--time', type=str, choices=['time', 'pos', 'empty'], help='
 parser.add_argument('--uniform', action='store_true', help='take uniform sampling from temporal neighbors')
 parser.add_argument('--n_batch', type=int, default=5, help='number of batches to execute')
 parser.add_argument('--start_profiling', type=str, choices=['True', 'False'],default='True', help='whether to start profiling')
-parser.add_argument('--full_dataset', type=str, choices=['True', 'False'],default='True', help='whether to profile on the whole dataset/choose the number of batches for profiling')
+parser.add_argument('--full_dataset', type=str, choices=['true', 'false'],default='false', help='whether to profile on the whole dataset/choose the number of batches for profiling')
 parser.add_argument('--dataset_type', type=str, choices=['Train', 'Val','Test'],default='Test', help='choose which part of the dataset for profiling')
 try:
     args = parser.parse_args()
@@ -97,7 +97,7 @@ def eval_one_epoch(hint, tgan, sampler, src, dst, ts, label):
     val_acc, val_ap, val_f1, val_auc = [], [], [], []
     with torch.no_grad():
         tgan = tgan.eval()
-        if(FULL_DATASET):
+        if(FULL_DATASET == 'true'):
             TEST_BATCH_SIZE= BATCH_SIZE
             num_test_instance = len(src)
             num_test_batch = math.ceil(num_test_instance / TEST_BATCH_SIZE)
@@ -110,7 +110,9 @@ def eval_one_epoch(hint, tgan, sampler, src, dst, ts, label):
             # percent = 100 * k / num_test_batch
             # if k % int(0.2 * num_test_batch) == 0:
             #     logger.info('{0} progress: {1:10.4f}'.format(hint, percent))
+            TEST_BATCH_SIZE = BATCH_SIZE
             s_idx = k * TEST_BATCH_SIZE
+            num_test_instance = len(src)
             e_idx = min(num_test_instance - 1, s_idx + TEST_BATCH_SIZE)
             src_l_cut = src[s_idx:e_idx]
             dst_l_cut = dst[s_idx:e_idx]
@@ -238,7 +240,7 @@ else:
 
 if (START_PROFILING):
     with profile(activities=[
-            ProfilerActivity.CPU, ProfilerActivity.CUDA], on_trace_ready= torch.profiler.tensorboard_trace_handler('./log/'+ 'CPU_TGAT_overhead_1'), record_shapes = True, profile_memory = True, with_stack = True) as prof:
+            ProfilerActivity.CPU, ProfilerActivity.CUDA], on_trace_ready= torch.profiler.tensorboard_trace_handler('./log/'+ 'TGAT_profile_results'), record_shapes = True, profile_memory = True, with_stack = True) as prof:
         with record_function("model_initialization"):
             #device = torch.device('cuda:{}'.format(GPU))
             #device = 'cpu'
