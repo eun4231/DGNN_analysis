@@ -5,6 +5,7 @@ This repository contains the code for Dynamic Graph Neural Networks on Hardware:
 ## Data
 
 The dataset used for TGAT is Wikipedia and Reddit. 
+
 Wikipedia can be downloaded here: http://snap.stanford.edu/jodie/wikipedia.csv. 
 
 Reddit can be downloaded here: http://snap.stanford.edu/jodie/reddit.csv.
