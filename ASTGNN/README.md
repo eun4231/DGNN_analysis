@@ -12,6 +12,7 @@ The dataset used for ASTGNN is obtained from the Caltrans Performance Measuremen
 
 # Train and Test
 Set --config with a configuration file to train and test the model.
+
 Sample commands on PEMS04 dataset:
 
 Step 1: Preprocess the dataset:
