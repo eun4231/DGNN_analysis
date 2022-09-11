@@ -6,9 +6,11 @@ This repository contains the code for Dynamic Graph Neural Networks on Hardware:
 
 The dataset used for TGAT is Wikipedia. It can be downloaded here: http://snap.stanford.edu/jodie/wikipedia.csv. 
 
+## NVIDIA Nsight Systems download
+
 
 ## Running the experiments
-
+Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
 
 #### Preprocess the data
 We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
