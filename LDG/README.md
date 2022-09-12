@@ -1,6 +1,13 @@
-# LDG
+# LDG Profiling
 
-PyTorch code for our paper on [Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367).
+The following is the code for performing analysis on LDG.
+
+Link to the original paper:
+https://ieeexplore.ieee.org/document/9346058
+
+## Related Paper and Github Project
+
+[Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367) [[Github](https://github.com/uoguelph-mlrg/LDG)]
 
 
 **Updates**
