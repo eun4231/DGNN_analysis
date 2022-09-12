@@ -3,6 +3,9 @@ EvolveGCN Profiling Using Pytorch Profiler
 
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
 
+## Related Paper and Github Project
+- [EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs](https://arxiv.org/abs/1902.10191) [Github](https://github.com/IBM/EvolveGCN)
+
 ## Data
 
 The dataset used in the paper:
