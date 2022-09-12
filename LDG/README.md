@@ -2,8 +2,6 @@
 
 The following is the code for performing analysis on LDG.
 
-Link to the original paper:
-https://ieeexplore.ieee.org/document/9346058
 
 ## Related Paper and Github Project
 
@@ -70,22 +68,3 @@ To use the Frequency bias, add the `--freq` flag.
 
 I provide the base class [data_loader.py](data_loader.py), showing which class attributes and functions must be implemented if you want to train our model on other datasets. Plus I added [example_data_loader.py](example_data_loader.py), showing a minimal example of using the base class.
 
-
-## Citation 
-
-If you make use of this code, we appreciate it if you can cite our paper as follows:
-
-```
-@ARTICLE{knyazev2019learning,
-  title         = "Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions",
-  author        = "Knyazev, Boris and Augusta, Carolyn and Taylor, Graham W",
-  month         =  sep,
-  year          =  2019,
-  archivePrefix = "arXiv",
-  primaryClass  = "stat.ML",
-  eprint        = "1909.10367"
-}
-```
-
-[1] [Rakshit Trivedi, Mehrdad Farajtabar, Prasenjeet Biswal, and Hongyuan Zha. DyRep: Learning
-representations over dynamic graphs. In ICLR, 2019](https://openreview.net/forum?id=HyePrhR5KX)
