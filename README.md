@@ -1,9 +1,9 @@
 # DGNN_analysis
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis (IISWC 2022).
 
-## NVIDIA Nsight Systems download
+## NVIDIA Nsight Systems Installation
 
-Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
+Please install the profiling tool using this link: https://developer.nvidia.com/nsight-systems
 
 Directly run the downloaded installer to install this tool on your machine.
 
