@@ -5,11 +5,11 @@ This repository contains the code for Dynamic Graph Neural Networks on Hardware:
 
 Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
 
-Directly run the donloaded installer to install this tool on your machine.
+Directly run the downloaded installer to install this tool on your machine.
 
 ## Pytorch Profiler Installation
 
-#### 1. Install Pytorch and Torchvision using the following command:
+#### 1. Install PyTorch and Torchvision using the following command:
 
 ```{bash}
 pip install torch torchvision
@@ -25,11 +25,11 @@ pip install torch_tb_profiler
 ```{bash}
 tensorboard --logdir=./log
 ```
-Log is a folder containing trace files. Or you can change it to any path containing generated trace files.
+log is a folder containing trace files. You can set it to any path containing the generated trace files.
 
 ## Profiling results:
 
-Once you correctly profile our models using Pytorch Profiler, you will get similiar results as follows:
+Once you profile the models using Pytorch Profiler, you will get results as follows:
 
 ![image](https://github.com/eun4231/DGNN_analysis/blob/main/Pytorch_profiler.png)
 
