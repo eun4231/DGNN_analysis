@@ -2,6 +2,9 @@
 
 The following is the code for performing analysis on ASTGNN.
 
+Link to the original paper:
+https://ieeexplore.ieee.org/document/9346058
+
 # Requirements
 ```python
 pip install requirements.txt
