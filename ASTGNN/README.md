@@ -5,15 +5,20 @@ The following is the code for performing analysis on ASTGNN.
 Link to the original paper:
 https://ieeexplore.ieee.org/document/9346058
 
-# Requirements
+## Related Paper and Github Project
+
+- [Learning Dynamics and Heterogeneity of Spatial-Temporal Graph Data for Traffic Forecasting](https://ieeexplore.ieee.org/document/9346058) [[Github](https://github.com/guoshnBJTU/ASTGNN)]
+
+
+## Requirements
 ```python
 pip install requirements.txt
 ```
 
-# Data
+## Data
 The dataset used for ASTGNN is obtained from the Caltrans Performance Measurement System (PeMS).
 
-# Train and Test
+## Train and Test
 Set --config with a configuration file to train and test the model.
 
 Sample commands on PEMS04 dataset:
