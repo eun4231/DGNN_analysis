@@ -2,6 +2,10 @@
 
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
 
+## Related paper and Github project
+
+[Inductive Representation Learning on Temporal Graphs](https://arxiv.org/abs/2002.07962) [[Github](https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs#inductive-representation-learning-on-temporal-graphs-iclr-2020)]
+
 ## Data
 
 The dataset used for TGAT is Wikipedia and Reddit. 
