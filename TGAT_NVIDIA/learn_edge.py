@@ -127,10 +127,10 @@ def eval_one_epoch(hint, tgan, sampler, src, dst, ts, label):
 g_df = pd.read_csv('./processed/ml_{}.csv'.format(DATA))
 #g_df.shape:(157474,6)
 e_feat = np.load('./processed/ml_{}.npy'.format(DATA))
-#e_feat.shape:(157475,172)  #多出来一位是因为边是从1开始编号的,0号边的特征为0
+#e_feat.shape:(157475,172)  
 n_feat = np.load('./processed/ml_{}_node.npy'.format(DATA))
 
-val_time, test_time = list(np.quantile(g_df.ts, [0.70, 0.85])) #求分位数，前70%作为training set, 中15%作为validate set，最后15%作为test set.
+val_time, test_time = list(np.quantile(g_df.ts, [0.70, 0.85])) 
 
 src_l = g_df.u.values
 dst_l = g_df.i.values
@@ -139,20 +139,20 @@ label_l = g_df.label.values
 ts_l = g_df.ts.values
 
 max_src_index = src_l.max()  #max_src_index: 8227
-max_idx = max(src_l.max(), dst_l.max())  #节点最大编号
+max_idx = max(src_l.max(), dst_l.max())  
 
 random.seed(2020)
 
-#python中的set()函数:无序，不重复，不能通过索引取值
 
-total_node_set = set(np.unique(np.hstack([g_df.u.values, g_df.i.values])))  #set()创建一个不含重复数据的集合(所有节点的集合)
+
+total_node_set = set(np.unique(np.hstack([g_df.u.values, g_df.i.values])))  
 num_total_unique_nodes = len(total_node_set)  #9227
-#np.hstack 水平方向叠加  np.unique删除重复元素并按从小到大排列
+
 mask_node_set = set(random.sample(set(src_l[ts_l > val_time]).union(set(dst_l[ts_l > val_time])), int(0.1 * num_total_unique_nodes))) #cselect 10% from validate and test
 mask_src_flag = g_df.u.map(lambda x: x in mask_node_set).values
-mask_dst_flag = g_df.i.map(lambda x: x in mask_node_set).values #选出mask_node_set中的source and destination index
-none_node_flag = (1 - mask_src_flag) * (1 - mask_dst_flag) #src和dst节点都不在测试集采样中
-# mask_src_flag和mask_dst_flag是以True 和 False形式存放的
+mask_dst_flag = g_df.i.map(lambda x: x in mask_node_set).values 
+none_node_flag = (1 - mask_src_flag) * (1 - mask_dst_flag) 
+
 valid_train_flag = (ts_l <= val_time) * (none_node_flag > 0)
 
 train_src_l = src_l[valid_train_flag]
@@ -164,7 +164,7 @@ train_label_l = label_l[valid_train_flag]  # select the training dataset
 # define the new nodes sets for testing inductiveness of the model
 train_node_set = set(train_src_l).union(train_dst_l)
 assert(len(train_node_set - mask_node_set) == len(train_node_set))
-new_node_set = total_node_set - train_node_set#确保所有的点出现的时间都在70% validate时间之前
+new_node_set = total_node_set - train_node_set
 
 # select validation and test dataset
 valid_val_flag = (ts_l <= test_time) * (ts_l > val_time)
@@ -205,7 +205,7 @@ nn_test_label_l = label_l[nn_test_flag]
 adj_list = [[] for _ in range(max_idx + 1)]
 for src, dst, eidx, ts in zip(train_src_l, train_dst_l, train_e_idx_l, train_ts_l):
     adj_list[src].append((dst, eidx, ts))
-    adj_list[dst].append((src, eidx, ts))  #建立一个无向图的临接矩阵
+    adj_list[dst].append((src, eidx, ts))  
 train_ngh_finder = NeighborFinder(adj_list, uniform=UNIFORM)
 
 # full graph with all the data for the test and validation purpose
@@ -215,11 +215,11 @@ for src, dst, eidx, ts in zip(src_l, dst_l, e_idx_l, ts_l):
     full_adj_list[dst].append((src, eidx, ts))
 full_ngh_finder = NeighborFinder(full_adj_list, uniform=UNIFORM)
 
-train_rand_sampler = RandEdgeSampler(train_src_l, train_dst_l) #训练集
-val_rand_sampler = RandEdgeSampler(src_l, dst_l)  #全量样本
-nn_val_rand_sampler = RandEdgeSampler(nn_val_src_l, nn_val_dst_l) #验证集新节点产生的边
-test_rand_sampler = RandEdgeSampler(src_l, dst_l) #全量样本
-nn_test_rand_sampler = RandEdgeSampler(nn_test_src_l, nn_test_dst_l) #测试集新节点产生的边
+train_rand_sampler = RandEdgeSampler(train_src_l, train_dst_l) 
+val_rand_sampler = RandEdgeSampler(src_l, dst_l)  
+nn_val_rand_sampler = RandEdgeSampler(nn_val_src_l, nn_val_dst_l) 
+test_rand_sampler = RandEdgeSampler(src_l, dst_l)
+nn_test_rand_sampler = RandEdgeSampler(nn_test_src_l, nn_test_dst_l) 
 
 
 ### Model initialize
@@ -231,7 +231,7 @@ optimizer = torch.optim.Adam(tgan.parameters(), lr=LEARNING_RATE)
 criterion = torch.nn.BCELoss()
 tgan = tgan.to(device)
 
-num_instance = len(train_src_l)  #训练集的数量81029
+num_instance = len(train_src_l)  
 num_batch = math.ceil(num_instance / BATCH_SIZE)  # the number of batch
 
 logger.info('num of training instances: {}'.format(num_instance))
@@ -264,8 +264,8 @@ for epoch in range(NUM_EPOCH):
         src_l_fake, dst_l_fake = train_rand_sampler.sample(size) #负采样
         
         with torch.no_grad():
-            pos_label = torch.ones(size, dtype=torch.float, device=device)  #正样本定义为1
-            neg_label = torch.zeros(size, dtype=torch.float, device=device)#负样本定义为0
+            pos_label = torch.ones(size, dtype=torch.float, device=device)  
+            neg_label = torch.zeros(size, dtype=torch.float, device=device)
         
         optimizer.zero_grad()
         tgan = tgan.train()
