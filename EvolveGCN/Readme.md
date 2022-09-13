@@ -1,13 +1,13 @@
-EvolveGCN Profiling Using Pytorch Profiler
-=====
+## EvolveGCN: Evolving Graph Convolutional Networks
 
-This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
+This page contains the code for the model ASTGNN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
+---
 
 ## Related Paper and Github Project
 
 - [EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs](https://arxiv.org/abs/1902.10191) [[Github](https://github.com/IBM/EvolveGCN)]
 
-## Data
+## Dataset
 
 The dataset used in the paper:
 
@@ -21,15 +21,15 @@ For downloaded data sets please place them in the 'data' folder.
   * PyTorch 1.0 or higher
   * Python 3.6 or higher
 
-## Usage
+## Evaluate EvolveGCN Inference
 
 Set --config_file with a yaml configuration file to run the experiments. For example:
 
-To run EvolveGCN-O:
+#### To run EvolveGCN-O:
 ```sh
 python run_exp.py --config_file ./experiments/parameters_bitcoin_alpha_edgecls_egcn_o.yaml
 ```
-To run EvolveGCN-H:
+#### To run EvolveGCN-H:
 ```sh
 python run_exp.py --config_file ./experiments/parameters_bitcoin_alpha_edgecls_egcn_h.yaml
 ```
