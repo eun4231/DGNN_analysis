@@ -1,6 +1,6 @@
 ## EvolveGCN: Evolving Graph Convolutional Networks
 
-This page contains the code for the model ASTGNN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
+This page contains the code for the model EvolveGCN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 ---
 
@@ -21,6 +21,8 @@ For downloaded data sets please place them in the 'data' folder.
 ## Requirements
   * PyTorch 1.0 or higher
   * Python 3.6 or higher
+
+---
 
 ## Evaluate EvolveGCN Inference
 
