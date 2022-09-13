@@ -34,5 +34,3 @@ To test the model, comment train_main() and uncomment predict_main() in train_AS
 ```python
 python train_ASTGNN.py --config configurations/PEMS04.conf
 ```
-
-The settings for each experiments are given in the "configurations" folder.
