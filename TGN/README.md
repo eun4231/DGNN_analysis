@@ -27,8 +27,8 @@ scikit_learn==0.23.1
 The dense `npy` format have been applied to save the features in binary format. If edge features or nodes 
 features are absent, they will be replaced by a vector of zeros. 
 ```{bash}
-python utils/preprocess_data.py --data wikipedia --bipartite
-python utils/preprocess_data.py --data reddit --bipartite
+$ python utils/preprocess_data.py --data wikipedia --bipartite
+$ python utils/preprocess_data.py --data reddit --bipartite
 ```
 #### General flags
 
