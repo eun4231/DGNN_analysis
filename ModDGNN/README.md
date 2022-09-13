@@ -9,7 +9,7 @@ This page contains the code for the model MolDGNN and for performing analysis us
 - [Molecular Trajectories rom the ISO17 Dataset](http://quantum-machine.org/datasets)
 
 
-### Requirements
+## Requirements
 - Dependencies (with python >= 3.7):
 ```{bash}
 pandas==1.1.0
