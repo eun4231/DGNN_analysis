@@ -8,6 +8,8 @@ This page contains the code for the model DyRep and LDG and for performing analy
 
 [Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367) [[Github](https://github.com/uoguelph-mlrg/LDG)]
 
+[DyRep: Learning representations over dynamic graphs](https://openreview.net/forum?id=HyePrhR5KX)
+
 
 ## Dataset
 
@@ -43,11 +45,11 @@ We provide the preprocessed pkl files in the `Github` folder so that you do not 
 
 ### Social Evolution
 
-Running the baseline DyRep model [1] on Social Evolution:
+Running DyRep model on Social Evolution:
 
 `python main.py --log_interval 300  --data_dir ./SocialEvolution/`.
 
-Running our latent dynamic graph (LDG) model with a learned graph, sparse prior and biliear interactions:
+Running LDG model with a learned graph, sparse prior and biliear interactions:
 
 `python main.py --log_interval 300  --data_dir ./SocialEvolution/ --encoder mlp --soft_attn --bilinear --bilinear_enc --sparse`
 
