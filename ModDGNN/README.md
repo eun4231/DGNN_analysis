@@ -1,11 +1,11 @@
 ## MolDGNN: Molecular Dynamic Graph Neural Network
-This page contains the code for the model MolDGNN and the two profiling tools: Pytorch Profiler and Nsight Systems.
+This page contains the code for the model MolDGNN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 ---
-## Model's Paper and its GitHub Page
+## Related Paper and Github Project
 - [Geometric learning of the conformational dynamics of molecules using dynamic graph neural networks](https://arxiv.org/abs/2106.13277) [[GitHub](https://github.com/pnnl/mol_dgnn)]
 
-## Datasets Used for profiling this model
+## Dataset
 - [Molecular Trajectories rom the ISO17 Dataset](http://quantum-machine.org/datasets)
 
 
