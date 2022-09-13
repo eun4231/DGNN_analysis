@@ -2,16 +2,18 @@
 
 This page contains the code for the model DyRep and LDG and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
+---
 
 ## Related Paper and Github Project
 
-[Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367) [[Github](https://github.com/uoguelph-mlrg/LDG)]
+- [Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367) [[Github](https://github.com/uoguelph-mlrg/LDG)]
 
-[DyRep: Learning representations over dynamic graphs](https://openreview.net/forum?id=HyePrhR5KX)
+- [DyRep: Learning representations over dynamic graphs](https://openreview.net/forum?id=HyePrhR5KX)
 
 
 ## Dataset
 - [Social Evolution](http://realitycommons.media.mit.edu/socialevolution4.html)
+
 - [Github](https://www.gharchive.org/)
 
 
