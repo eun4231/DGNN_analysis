@@ -1,25 +1,16 @@
-# TGAT Profiling Using NVIDIA Nsight Systems
+## TGAT: Temporal Graph Attention (with Nsight Systems)
 
-This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
+This page contains the code for the model TGAT and for performing analysis using a profiling tool: NVIDIA Nsignt Systems.
+
+## Related paper and Github project
+
+[Inductive Representation Learning on Temporal Graphs](https://arxiv.org/abs/2002.07962) [[Github](https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs#inductive-representation-learning-on-temporal-graphs-iclr-2020)]
 
 ## Data
 
-The dataset used for TGAT is Wikipedia. It can be downloaded here: http://snap.stanford.edu/jodie/wikipedia.csv. 
+- [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)
 
-## NVIDIA Nsight Systems download
-
-Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
-
-## Running the experiments
-
-
-#### Preprocess the data
-We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
-```{bash}
-python process.py 
-```
-
-### Requirements
+## Requirements
 
 * python >= 3.7
 
@@ -36,6 +27,21 @@ torch==1.10.1
 torchvision==0.11.2
 tqdm==4.64.1
 ```
+
+## NVIDIA Nsight Systems download
+
+Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
+
+---
+
+## Evaluate TGAT Inference
+
+#### Preprocess the data
+We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
+```{bash}
+python process.py 
+```
+
 
 ### Command and configurations
 
