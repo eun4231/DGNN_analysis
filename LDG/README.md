@@ -1,6 +1,7 @@
-# LDG Profiling
+## LDG Profiling
+LDG: Latent Dynamic Graph, DyRep: 
 
-The following is the code for performing analysis on LDG.
+This page contains the code for the model DyRep and LDG and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 
 ## Related Paper and Github Project
@@ -8,13 +9,7 @@ The following is the code for performing analysis on LDG.
 [Learning Temporal Attention in Dynamic Graphs with Bilinear Interactions](https://arxiv.org/abs/1909.10367) [[Github](https://github.com/uoguelph-mlrg/LDG)]
 
 
-**Updates**
-- added the `--bilinear_enc` flag in addition to `--bilinear` to contol where to use the bilinear layer
-- added the `--model` flag to run baseline Graph Convolutional/Attention Networks (GCN/GAT) models
-- improved logging and added the `--verbose` to control how much info to print out
-
-
-## Data
+## Dataset
 
 ### Social Evolution
 
@@ -43,7 +38,8 @@ Each user initiated at least 200 communication and 7 association events during t
 We provide the preprocessed pkl files in the `Github` folder so that you do not need to access the original data to run our code.
 
 
-## Examples
+---
+## Evaluate LDG, DyRep Inference
 
 ### Social Evolution
 
@@ -62,9 +58,4 @@ Note that on Social Evolution our default option is to filter `Proximity` events
 To run Github experiments, use the same arguments, but add `--dataset github --data_dir ./Github`.
 
 To use the Frequency bias, add the `--freq` flag.
-
-
-### Other datasets
-
-I provide the base class [data_loader.py](data_loader.py), showing which class attributes and functions must be implemented if you want to train our model on other datasets. Plus I added [example_data_loader.py](example_data_loader.py), showing a minimal example of using the base class.
 
