@@ -1,6 +1,6 @@
 ## TGAT: Temporal Graph Attention (with Nsight Systems)
 
-This page contains the code for the model TGAT and for performing analysis using a profiling tool: NVIDIA Nsignt Systems.
+This page contains the code for the model TGAT and for performing analysis using a profiling tool: Nsignt Systems.
 
 ## Related paper and Github project
 
@@ -28,9 +28,6 @@ torchvision==0.11.2
 tqdm==4.64.1
 ```
 
-## NVIDIA Nsight Systems download
-
-Please download this profiling tool usig this link: https://developer.nvidia.com/nsight-systems
 
 ---
 
