@@ -1,5 +1,7 @@
-# Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis (IISWC 2022)
+## Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis (IISWC 2022)
 This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis (IISWC 2022).
+
+---
 
 ## NVIDIA Nsight Systems Installation
 
