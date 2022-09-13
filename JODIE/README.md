@@ -1,18 +1,16 @@
 ## JODIE: Predicting Dynamic Embedding Trajectory in Temporal Interaction Networks
-This page contains the code for the model JODIE and the two profiling tools: Pytorch Profiler and Nsight Systems.
+This page contains the code for the model JODIE and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 ---
-## Model's Paper and its GitHub Page
+## Related Paper and Github Project
 - [Predicting Dynamic Embedding Trajectory in Temporal Interaction Networks](https://arxiv.org/abs/1908.01207) [[GitHub](https://github.com/srijankr/jodie)]
 
-## Datasets Used for profiling this model
+## Dataset
 - [Reddit](http://snap.stanford.edu/jodie/reddit.csv)
 - [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)
 - [LastFM](http://snap.stanford.edu/jodie/lastfm.csv)
 
-
-
-### Requirements
+## Requirements
 
 - Python >= 3.7
 ```{bash}
