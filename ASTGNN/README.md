@@ -1,6 +1,6 @@
 ## ASTGNN: Attention based Spatial-Temporal Graph Neural Network
 
-This page contains the code for the model ASTGNN and for performing analysis using the two profiling tools: Pytorch Profiler and Nsight Systems.
+This page contains the code for the model ASTGNN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 ---
 ## Related Paper and Github Project
