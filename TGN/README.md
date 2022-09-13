@@ -1,14 +1,13 @@
 ## TGN: Temporal Graph Networks
-This page contains the code for the model TGN and the two profiling tools: Pytorch Profiler and Nsight Systems.
+This page contains the code for the model TGN and for performing analysis using two profiling tools: Pytorch Profiler and Nsight Systems.
 
 ---
-## Model's Paper and its GitHub Page
+## Related Paper and Github Project
 - [Temporal Graph Networks for Deep Learning on Dynamic Graphs](https://arxiv.org/abs/2006.10637) [[GitHub](https://github.com/twitter-research/tgn)]
 
-## Datasets Used for profiling this model
+## Dataset
 - [Reddit](http://snap.stanford.edu/jodie/reddit.csv)
 - [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)
-
 
 
 ## Requirements
@@ -19,7 +18,6 @@ torch==1.6.0
 scikit_learn==0.23.1
 ```
 ---
-
 
 
 ## Evaluate TGN Inference
