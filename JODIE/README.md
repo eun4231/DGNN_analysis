@@ -23,9 +23,10 @@ scikit_learn==0.19.1
 ```
 ---
 
-### Evaluate the model
+## Evaluate JODIE Inference
 
 #### General flags
+
 This code can be given the following command-line arguments:
 1. `--network`: this is the name of the file which has the data in the `data/` directory. The file should be named `<network>.csv`. The dataset format is explained below. This is a required argument. 
 2. `--model`: this is the name of the model and the file where the model will be saved in the `saved_models/` directory. Default value: jodie.

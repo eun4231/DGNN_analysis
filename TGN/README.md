@@ -22,8 +22,8 @@ scikit_learn==0.23.1
 
 
 
-## Evaluate the model
-### Preprocess the data
+## Evaluate TGN Inference
+#### Preprocess the data
 The dense `npy` format have been applied to save the features in binary format. If edge features or nodes 
 features are absent, they will be replaced by a vector of zeros. 
 ```{bash}
@@ -64,7 +64,7 @@ optional arguments:
 ```
 
 
-#### Model Inference
+#### TGN Inference
 
 To run the inference of TGN model (tgn-attn), use the following command:
 ```
