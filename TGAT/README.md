@@ -1,6 +1,8 @@
-# TGAT Profiling Using Pytorch Profiler
+## TGAT: Temporal Graph Attention (with Pytorch Profiler)
 
-This repository contains the code for Dynamic Graph Neural Networks on Hardware: Bottleneck Analysis, published in IISWC 2022.
+This page contains the code for the model TGAT and for performing analysis using a profiling tool: Pytorch Profiler.
+
+---
 
 ## Related paper and Github project
 
@@ -8,23 +10,10 @@ This repository contains the code for Dynamic Graph Neural Networks on Hardware:
 
 ## Data
 
-The dataset used for TGAT is Wikipedia and Reddit. 
+- [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)
+- [Reddit](http://snap.stanford.edu/jodie/reddit.csv)
 
-Wikipedia can be downloaded here: http://snap.stanford.edu/jodie/wikipedia.csv. 
-
-Reddit can be downloaded here: http://snap.stanford.edu/jodie/reddit.csv.
-
-
-## Running the experiments
-
-
-#### Preprocess the data
-We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
-```{bash}
-python process.py 
-```
-
-### Requirements
+## Requirements
 
 * python >= 3.7
 
@@ -40,6 +29,15 @@ scipy==1.8.1
 torch==1.10.1
 torchvision==0.11.2
 tqdm==4.64.1
+```
+
+## Evalutate TGAT Inference
+
+
+#### Preprocess the data
+We use the dense `npy` format to save the features in binary format. If edge features or nodes features are absent, it will be replaced by a vector of zeros. 
+```{bash}
+python process.py 
 ```
 
 ### Command and configurations
