@@ -44,7 +44,7 @@ tqdm==4.64.1
 
 ### Command and configurations
 
-#### Sample commend
+#### Sample command
 
 * To do the profiling on GPU
 ```{bash}
