@@ -24,6 +24,8 @@ scikit_learn==0.19.1
 ---
 
 ### Evaluate the model
+
+#### General flags
 This code can be given the following command-line arguments:
 1. `--network`: this is the name of the file which has the data in the `data/` directory. The file should be named `<network>.csv`. The dataset format is explained below. This is a required argument. 
 2. `--model`: this is the name of the model and the file where the model will be saved in the `saved_models/` directory. Default value: jodie.
@@ -33,14 +35,14 @@ This code can be given the following command-line arguments:
 6. `--train_proportion`: this is the fraction of interactions (from the beginning) that are used for training. The next 10% are used for validation and the next 10% for testing. Default value: 0.8
 7. `--state_change`: this is a boolean input indicating if the training is done with state change prediction along with interaction prediction. Default value: True.
 
-#### Interaction prediction
+##### Interaction prediction
 
 To run the inference of the model for the interaction prediction task, use the following command:
 ```
     $ python evaluate_interaction_prediction.py --network <network> --model jodie --epoch 1
 ```
 
-#### State change prediction
+##### State change prediction
 
 To run the inference of the model for the state change prediction task, use the following command:
 ```
@@ -51,33 +53,33 @@ To run the inference of the model for the state change prediction task, use the 
 The following commands are example of runnning Nsight Systems to generate a profile result file:
 - Sequential:
     ```
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_wikipedia --force-overwrite true python evaluate_interaction_prediction_nsys.py --network wikipedia --model jodie --epoch 1 --gpu 0
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_reddit --force-overwrite true python evaluate_interaction_prediction_nsys.py --network reddit --model jodie --epoch 1 --gpu 0
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_lastfm --force-overwrite true python evaluate_interaction_prediction_nsys.py --network lastfm --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_wikipedia --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys.py --network wikipedia --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_reddit --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys.py --network reddit --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/seq/interaction_seq_lastfm --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys.py --network lastfm --model jodie --epoch 1 --gpu 0
     ```
 
 - T-Batch:
     ```
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_wikipedia --force-overwrite true python evaluate_interaction_prediction_nsys_tBatch.py --network wikipedia --model jodie --epoch 1 --gpu 0
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_reddit --force-overwrite true python evaluate_interaction_prediction_nsys_tBatch.py --network reddit --model jodie --epoch 1 --gpu 0
-    nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_lastfm --force-overwrite true python evaluate_interaction_prediction_nsys_tBatch.py --network lastfm --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_wikipedia --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys_tBatch.py --network wikipedia --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_reddit --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys_tBatch.py --network reddit --model jodie --epoch 1 --gpu 0
+    $ nsys profile -w true -t cuda,nvtx,osrt,cudnn,cublas  --capture-range=cudaProfilerApi --capture-range-end=stop --cudabacktrace=true -x true --cuda-memory-usage=true -o resProf/nsys/tBatch/interaction_tBatch_warpUp_lastfm --force-overwrite true python Nsight_Profile/evaluate_interaction_prediction_nsys_tBatch.py --network lastfm --model jodie --epoch 1 --gpu 0
     ```
 
 
 
 #### Profiling the Interaction prediction running Pytorch Profiler
-The following commands are example of runnning Pytorch Profiler to generate a profile result file:
+The following commands are example of runnning Pytorch Profiler to generate profile results for different model configurations:
 - Sequential:
 
     ```
-    python evaluate_interaction_prediction_prof.py --network wikipedia --model jodie --epoch 0
-    python evaluate_interaction_prediction_prof_.py --network reddit --model jodie --epoch 0
-    python evaluate_interaction_prediction_prof.py --network lastfm --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof.py --network wikipedia --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof_.py --network reddit --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof.py --network lastfm --model jodie --epoch 0
     ```
 - T-Batch:
     ```
-    python evaluate_interaction_prediction_prof_tBatch.py --network wikipedia --model jodie --epoch 0
-    python evaluate_interaction_prediction_prof_tBatch.py --network reddit --model jodie --epoch 0
-    python evaluate_interaction_prediction_prof_tBatch.py --network lastfm --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof_tBatch.py --network wikipedia --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof_tBatch.py --network reddit --model jodie --epoch 0
+    $ python Pytorch_Profile/evaluate_interaction_prediction_prof_tBatch.py --network lastfm --model jodie --epoch 0
 
     ```
