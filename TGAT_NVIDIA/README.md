@@ -6,7 +6,7 @@ This page contains the code for the model TGAT and for performing analysis using
 
 [Inductive Representation Learning on Temporal Graphs](https://arxiv.org/abs/2002.07962) [[Github](https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs#inductive-representation-learning-on-temporal-graphs-iclr-2020)]
 
-## Data
+## Dataset
 
 - [Wikipedia](http://snap.stanford.edu/jodie/wikipedia.csv)
 
